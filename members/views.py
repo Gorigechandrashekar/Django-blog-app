@@ -11,7 +11,7 @@ def members(request):
         'mymembers':mymembers,
     }
     return HttpResponse(template.render(context,request))
-def details(request,id):
+def details(request,slug):
     mymember=Member.objects.all().values()
     print(mymember)
     template=loader.get_template("details.html")
